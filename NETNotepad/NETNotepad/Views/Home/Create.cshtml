@@ -1,0 +1,26 @@
+﻿@model CreateNote 
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+Create a note
+    <form asp-controller="Home" asp-action="Create" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Title</span>
+            </div>
+            <input type="text" asp-for="Title" class="form-control" aria-label="Title" aria-describedby="basic-addon1">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group green-border-focus">
+            <label asp-for="Text"></label>
+            <textarea asp-for="Text" class="form-control" id="exampleFormControlTextarea5" rows="3" maxlength="1000"></textarea>
+            <span asp-validation-for="Text" class="text-danger"></span>
+            <div id="count">
+            </div>
+            <input type="submit" name="submit" class="btn btn-primary" value="Create" />
+        </div>
+    </form>
+

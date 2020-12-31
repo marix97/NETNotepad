@@ -1,0 +1,20 @@
+﻿@model NoteResponseModel
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="card text-center">
+        <div class="card-header">
+            Note selected for deletion
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">@Model.Text</p>
+        </div>
+        </div>
+        <form asp-controller="Home" asp-action="DeleteConfirmed" method="post">
+            <input type="hidden" asp-for="ID" />
+            <input type="submit" name="submit" class="btn btn-primary" value="Delete" />
+        </form>
+
